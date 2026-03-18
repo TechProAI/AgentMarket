@@ -1,0 +1,151 @@
+.skills-input-wrap {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.skills-hint {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 0.45rem;
+}
+
+.suggested-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--purple-dark);
+  margin-bottom: 0.65rem;
+}
+
+.suggested-label svg {
+  width: 14px;
+  height: 14px;
+}
+
+.suggested-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.suggested-skill-btn {
+  padding: 0.38rem 0.85rem;
+  border: 1.5px solid #c4b5fd;
+  border-radius: 99px;
+  background: #fff;
+  color: var(--purple-dark);
+  font-family: var(--font);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.suggested-skill-btn:hover {
+  background: var(--purple-ghost);
+  border-color: var(--purple);
+  color: var(--purple);
+}
+
+.suggested-skill-btn.already-added {
+  background: var(--purple-pale);
+  border-color: var(--purple-mid);
+  opacity: 0.55;
+  cursor: default;
+}
+
+.skills-pool {
+  min-height: 80px;
+  background: var(--purple-ghost);
+  border: 1.5px dashed #c4b5fd;
+  border-radius: 12px;
+  padding: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-content: flex-start;
+}
+
+.skills-pool-empty {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  padding: 0.75rem 0;
+}
+
+.skill-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  background: linear-gradient(135deg, var(--purple-dark), var(--purple-light));
+  color: #fff;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  animation: tagIn 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes tagIn {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.skill-tag-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(255,255,255,0.8);
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s;
+}
+
+.skill-tag-remove:hover {
+  color: #fff;
+}
+
+.generate-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.75rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--purple-dark), var(--purple-light));
+  color: #fff;
+  font-family: var(--font);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-btn);
+  transition: all 0.2s;
+}
+
+.generate-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(124,58,237,0.45);
+}
+
+.generate-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.generate-btn svg {
+  width: 16px;
+  height: 16px;
+}

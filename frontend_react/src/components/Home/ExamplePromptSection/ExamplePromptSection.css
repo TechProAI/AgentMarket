@@ -1,0 +1,47 @@
+.prompt-container {
+    max-width: 1200px;
+    margin: 0 auto 80px auto;
+    
+}
+.prompt-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.prompt-main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 50px;
+    gap: 14px;
+}
+.prompt-head {
+    font-size: 20px;
+}
+.prompt-desc {
+    font-size: 20px;
+    color: rgb(57, 56, 56);
+}
+.prompt {
+    background-color: white;
+    padding: 25px 25px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    transition: all;
+    transition-duration: 300ms;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.prompt:hover {
+    border: 1px solid #c4b5fd;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.sparkles {
+    width: 1.3rem;
+    height: 1.3rem;
+    color: #9333EA;
+}
+.prompt-line {
+    font-weight: 500;
+}

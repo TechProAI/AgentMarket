@@ -1,0 +1,81 @@
+.rb-page {
+  padding: 85px 0 0 0;
+}
+
+.photo-avatar-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.photo-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c4b5fd, #ddd6fe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 3px solid #ede9fe;
+  transition: all 0.3s ease;
+}
+
+.photo-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-avatar svg {
+  width: 52px;
+  height: 52px;
+  color: #a78bfa;
+}
+
+.photo-dropzone {
+  border: 2px dashed #c4b5fd;
+  border-radius: 12px;
+  padding: 2rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  background: var(--purple-ghost);
+  transition: all 0.2s ease;
+  margin-bottom: 1.75rem;
+}
+
+.photo-dropzone:hover,
+.photo-dropzone.drag-over {
+  border-color: var(--purple);
+  background: #ede9fe;
+}
+
+.photo-dropzone-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.6rem;
+}
+
+.photo-dropzone-icon svg {
+  width: 32px;
+  height: 32px;
+  color: #8b5cf6;
+}
+
+.photo-dropzone p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.photo-dropzone span {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.photo-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}

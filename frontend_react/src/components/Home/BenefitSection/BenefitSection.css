@@ -1,0 +1,50 @@
+.benefit-container {
+    background: white;
+    margin: 100px 0;
+    padding-top: 10px;
+}
+.benefit-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.benefit-head {
+    font-size: 20px;
+}
+.benefit-desc {
+    color: rgb(57, 56, 56);
+    font-size: 21px;
+}
+.benefit-main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 60px;
+}
+.benefit-card {
+    background: linear-gradient(to bottom right, #f9fafb, #ffffff);
+    padding: 25px 25px;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.b-icon {
+    color: white;
+}
+.icon-div {
+    width: 13%;
+    border-radius: 12px;
+    padding: 10px 6px 8px 10px;
+}
+.b-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+.b-desc {
+    color: rgb(57, 56, 56);
+    font-size: 14px;
+}

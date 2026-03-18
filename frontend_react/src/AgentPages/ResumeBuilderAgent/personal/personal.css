@@ -1,0 +1,6 @@
+/* Personal page has no extra styles beyond shared.css */
+/* Add page-specific overrides here if needed */
+
+.personal-form {
+  animation: cardIn 0.35s ease both;
+}

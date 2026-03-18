@@ -1,0 +1,337 @@
+/* ── Global Reset & Fonts ───────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --purple-dark:   #6d28d9;
+  --purple:        #7c3aed;
+  --purple-mid:    #8b5cf6;
+  --purple-light:  #a855f7;
+  --purple-pale:   #ede9fe;
+  --purple-ghost:  #f5f3ff;
+  --bg:            #e8edf5;
+  --card-bg:       #ffffff;
+  --text-primary:  #111827;
+  --text-secondary:#6b7280;
+  --text-muted:    #9ca3af;
+  --border:        #e5e7eb;
+  --border-focus:  #7c3aed;
+  --input-bg:      #f9fafb;
+  --radius-card:   16px;
+  --radius-input:  10px;
+  --shadow-card:   0 4px 32px rgba(0,0,0,0.07);
+  --shadow-btn:    0 4px 18px rgba(124,58,237,0.35);
+  --font:         'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* ── Page wrapper ───────────────────────────────────────────────────── */
+.rb-page {
+  min-height: 100vh;
+  /* background: linear-gradient(145deg, #dde4f0 0%, #e8edf5 50%, #dde4f0 100%); */
+  background: linear-gradient(
+  to bottom right,
+  #f8fafc,   /* slate-50 */
+  #eff6ff,   /* blue-50 */
+  #faf5ff    /* purple-50 */
+);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1rem 3rem;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────── */
+.rb-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.rb-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--purple-dark), var(--purple-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.rb-header p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 0.35rem;
+  font-weight: 500;
+}
+
+/* ── Card ────────────────────────────────────────────────────────────── */
+.rb-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  width: 100%;
+  max-width: 680px;
+  padding: 2.5rem 2.5rem 2rem;
+  animation: cardIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.rb-card-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.rb-card-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: 0.3rem;
+  margin-bottom: 1.75rem;
+  font-weight: 500;
+}
+
+/* ── Form fields ─────────────────────────────────────────────────────── */
+.rb-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.rb-field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+
+.rb-field label .required {
+  color: var(--purple);
+  margin-left: 2px;
+}
+
+.rb-input,
+.rb-textarea {
+  width: 100%;
+  padding: 0.7rem 0.95rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-input);
+  background: var(--input-bg);
+  font-family: var(--font);
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.rb-input::placeholder,
+.rb-textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.rb-input:focus,
+.rb-textarea:focus {
+  border-color: var(--border-focus);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(124,58,237,0.1);
+}
+
+.rb-textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.6;
+}
+
+.rb-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.rb-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ── Entry card (experience / project / education block) ─────────────── */
+.rb-entry-card {
+  background: var(--purple-ghost);
+  border: 1.5px solid var(--purple-pale);
+  border-radius: 12px;
+  padding: 1.4rem 1.4rem 1rem;
+  margin-bottom: 1rem;
+  animation: cardIn 0.3s ease both;
+}
+
+.rb-entry-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--purple-dark);
+  margin-bottom: 1rem;
+}
+
+.rb-entry-card-header svg {
+  width: 18px;
+  height: 18px;
+  color: var(--purple);
+}
+
+.rb-remove-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ef4444;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.rb-remove-btn:hover {
+  background: #fee2e2;
+}
+
+/* ── Add another button ──────────────────────────────────────────────── */
+.rb-add-btn {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px dashed var(--purple-mid);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--purple);
+  font-family: var(--font);
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: background 0.2s, color 0.2s;
+  margin-top: 0.25rem;
+}
+
+.rb-add-btn:hover {
+  background: var(--purple-ghost);
+}
+
+/* ── Navigation buttons ──────────────────────────────────────────────── */
+.rb-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.rb-btn-back {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.4rem;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text-primary);
+  font-family: var(--font);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.rb-btn-back:hover {
+  border-color: var(--purple-mid);
+  color: var(--purple);
+}
+
+.rb-btn-next {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.75rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--purple-dark), var(--purple-light));
+  color: #fff;
+  font-family: var(--font);
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-btn);
+  transition: all 0.2s;
+  letter-spacing: 0.01em;
+}
+
+.rb-btn-next:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(124,58,237,0.45);
+}
+
+.rb-btn-next:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Skip button (photo page) ────────────────────────────────────────── */
+.rb-btn-skip {
+  padding: 0.65rem 1.4rem;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text-primary);
+  font-family: var(--font);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.rb-btn-skip:hover {
+  border-color: var(--purple-mid);
+  color: var(--purple);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .rb-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .rb-row,
+  .rb-row-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .rb-header h1 {
+    font-size: 1.6rem;
+  }
+}
