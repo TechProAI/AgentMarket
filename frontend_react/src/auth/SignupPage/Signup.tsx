@@ -22,7 +22,7 @@ const Signup = () => {
         e.preventDefault()
         console.log(mail)
         console.log(pass)
-        const res = await axios.post("http://127.0.0.1:8000/signup", {
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}/signup`, {
             "email": mail,
             "password": pass,
             "user_name": user
