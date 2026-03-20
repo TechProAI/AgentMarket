@@ -38,7 +38,7 @@ const PreviewPage: React.FC = () => {
     const generate = async () => {
       setIsGenerating(true);
       try {
-        const res = await fetch("http://127.0.0.1:8000/api/resume-builder-agent/generate", {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/api/resume-builder-agent/generate`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -71,7 +71,7 @@ const PreviewPage: React.FC = () => {
     if (!generatedHtml) return;
     setIsDownloading(true);
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/resume-builder-agent/download", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/resume-builder-agent/download`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
