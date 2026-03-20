@@ -34,7 +34,7 @@ const WebSearchAgentPage = () => {
 
         try {
             const response = await axios.post(
-                `${process.env.REACT_APP_API_URL}/api/web-search-agent`,
+                `${process.env.REACT_APP_API_URL}api/web-search-agent`,
                 { text: input },
                 {
                     headers: {

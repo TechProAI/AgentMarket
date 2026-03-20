@@ -34,7 +34,7 @@ const TravelAgentPage = () => {
 
         try {
             const response = await axios.post(
-                `${process.env.REACT_APP_API_URL}/api/travel-agent`,
+                `${process.env.REACT_APP_API_URL}api/travel-agent`,
                 { text: input },
                 {
                     headers: {
