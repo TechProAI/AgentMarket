@@ -39,6 +39,10 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) =
 // ─── App ──────────────────────────────────────────────────────────────────────
 function App() {
 
+  useEffect(() => {
+    localStorage.removeItem("token")
+  },[])
+
   return (
     <>
       <Header />

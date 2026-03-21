@@ -4,12 +4,15 @@ import { useNavigate } from 'react-router'
 import { useAuth } from '../../context/AuthContext'
 import './Login.css'
 import { Zap } from 'lucide-react'
+import { useAPI } from '../../context/APIContext'
 
 const Login = () => {
     const [mail, setMail] = useState<string | null>(null)
     const [pass, setPass] = useState<string | null>(null)
     const navigate = useNavigate()
     const { token, login } = useAuth()
+    const {url} = useAPI()
+    console.log(url)
 
     useEffect(() => {
         if (token) {
@@ -19,7 +22,7 @@ const Login = () => {
 
     const handleLogin = async (e: any) => {
         e.preventDefault()
-        const res = await axios.post(`${process.env.REACT_APP_API_URL}login`, {
+        const res = await axios.post(`${url}login`, {
             "email": mail,
             "password": pass
         });

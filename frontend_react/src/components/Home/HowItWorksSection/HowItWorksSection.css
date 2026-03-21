@@ -9,10 +9,11 @@
 }
 .works-title {
     font-size: 20px;
+    margin-bottom: 20px;
 }
 .works-desc {
     color: #4b5563;
-    font-size: 21px;
+    font-size: 19px;
 }
 .works-main {
     display: flex;
@@ -33,29 +34,32 @@
 }
 .icon {
     color: white;
-    width: 2rem;
-    height: 2rem;
+    position: relative;
+    left: 1px;
+    top: 1px;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 .message-icon {
     background: linear-gradient(to bottom right, #2563EB, #9333EA);
     border-radius: 50%;
     padding: 20px 20px 20px 20px;
-    width: 2rem;
-    height: 2rem;
+    width: 5rem;
+    height: 5rem;
 }
 .cpu-icon {
     background: linear-gradient(to bottom right, #9333EA, #DB2777);
     border-radius: 50%;
     padding: 20px 20px 20px 20px;
-    width: 2rem;
-    height: 2rem;
+    width: 5rem;
+    height: 5rem;
 }
 .zap-icon {
     background: linear-gradient(to bottom right, #DB2777, #EA580C);
     border-radius: 50%;
     padding: 20px 20px 20px 20px;
-    width: 2rem;
-    height: 2rem;
+    width: 5rem;
+    height: 5rem;
 }
 .icon-1 {
     background-color: #2563EB;
@@ -67,8 +71,8 @@
     background-color: #DB2777;
 }
 .number {
-    height: 1rem;
-    width: 1rem;
+    height: 2rem;
+    width: 2rem;
     border-radius: 50%;
     position: absolute;
     padding: 10px 7px 11px 14px;
@@ -79,12 +83,19 @@
     bottom: 50px;
     left: 110px;
 }
+.number span {
+    position: relative;
+    right: 2px;
+}
 .question-title {
-    font-weight: bold;
+    font-weight: bolder;
     font-size: 20px;
     margin-bottom: 16px;
 }
 .question-detail {
     color: #4b5563;
     text-align: center;
+    line-height: 1.5rem;
+    font-size: 16px;
+    font-weight: 400;
 }
