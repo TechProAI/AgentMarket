@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router'
 import { useAuth } from '../../context/AuthContext'
 import { Zap } from 'lucide-react'
+import { useAPI } from '../../context/APIContext'
 import './Signup.css'
 
 const Signup = () => {
@@ -11,6 +12,7 @@ const Signup = () => {
     const [user, setUser] = useState<string>("")
     const navigate = useNavigate()
     const {token} = useAuth()
+    const {url} = useAPI()
 
     useEffect(() => {
         if(token){
@@ -22,7 +24,7 @@ const Signup = () => {
         e.preventDefault()
         console.log(mail)
         console.log(pass)
-        const res = await axios.post(`${process.env.REACT_APP_API_URL}signup`, {
+        const res = await axios.post(`${url}signup`, {
             "email": mail,
             "password": pass,
             "user_name": user

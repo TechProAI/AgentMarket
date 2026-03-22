@@ -92,18 +92,46 @@
 }
 .username {
     position: relative;
+    background: linear-gradient(to bottom right, #9333EA, #DB2777);
+    border-radius: 50%;
+    color: white;
+    padding: 10px 16px 10px 16px;
+}
+.username:hover {
+    cursor: default;
+}
+.username span {
+    font-size: 21px;
+    font-weight: 600;
 }
 .header-logout {
     position: absolute;
     z-index: 1000;
     background-color: white;
     /* border: 1px solid black; */
-    padding: 10px;
+    
     border-radius: 8px;
     box-shadow: 
   0 20px 25px -5px rgba(0, 0, 0, 0.1),
   0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  left: -70px;
-  top: 30px;
+  left: -10px;
+  top: 70px;
   transition: all;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+.popup-name {
+    border: 1px solid rgb(116, 116, 116);
+    padding: 10px 20px 10px 20px;
+}
+.popup-name:hover {
+    background-color: rgb(194, 193, 193);
+}
+.popup-logout {
+    border: 1px solid rgb(116, 116, 116);
+    padding: 10px 20px 10px 20px;
+}
+.popup-logout:hover {
+    background-color: rgb(194, 193, 193);
 }

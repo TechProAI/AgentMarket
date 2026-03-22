@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import { useNavigate } from "react-router";
 import './WebSearchAgent.css'
 import { useAuth } from "../../context/AuthContext";
+import { useAPI } from "../../context/APIContext";
 
 interface Message {
     role: "user" | "assistant";
@@ -19,6 +20,7 @@ const WebSearchAgentPage = () => {
     });
     const navigate = useNavigate()
     const { token } = useAuth()
+    const {url} = useAPI()
 
     useEffect(() => {
         localStorage.setItem("web_search_chat", JSON.stringify(messages));
@@ -34,7 +36,7 @@ const WebSearchAgentPage = () => {
 
         try {
             const response = await axios.post(
-                `${process.env.REACT_APP_API_URL}api/web-search-agent`,
+                `${url}api/web-search-agent`,
                 { text: input },
                 {
                     headers: {

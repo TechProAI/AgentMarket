@@ -50,11 +50,11 @@ const Header = () => {
                                 <a href="#agents-section">Explore AI Agents</a>
                             </button>
                             <div className='username' onClick={() => setIsUserClicked(!isUserClicked)}>
-                                {userLetter.toUpperCase()}
+                                <span>{userLetter.toUpperCase()}</span>
                                 {isUserClicked ? 
                                 <div className='header-logout'>
-                                    <div>{capitalizeFirstLetter(user)}</div>
-                                    <div onClick={handleLogout}>Logout</div>
+                                    <div className='popup-name'>{capitalizeFirstLetter(user)}</div>
+                                    <div onClick={handleLogout} className='popup-logout'>Logout</div>
                                 </div> : <></>}
                             </div>
                         </>

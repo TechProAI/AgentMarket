@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import { useNavigate } from "react-router";
 import './TravelAgent.css'
 import { useAuth } from "../../context/AuthContext";
+import { useAPI } from "../../context/APIContext";
 
 interface Message {
     role: "user" | "assistant";
@@ -19,6 +20,7 @@ const TravelAgentPage = () => {
     });
     const navigate = useNavigate()
     const { token } = useAuth()
+    const {url} = useAPI()
 
     useEffect(() => {
         localStorage.setItem("travel_chat", JSON.stringify(messages));
@@ -34,7 +36,7 @@ const TravelAgentPage = () => {
 
         try {
             const response = await axios.post(
-                `${process.env.REACT_APP_API_URL}api/travel-agent`,
+                `${url}api/travel-agent`,
                 { text: input },
                 {
                     headers: {

@@ -16,9 +16,10 @@
 }
 .prompt-head {
     font-size: 20px;
+    margin-bottom: 20px;
 }
 .prompt-desc {
-    font-size: 20px;
+    font-size: 18px;
     color: rgb(57, 56, 56);
 }
 .prompt {
