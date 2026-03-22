@@ -10,7 +10,8 @@ from routes.resume_builder_routes import router as resume_builder_router
 app = FastAPI()
 
 origins = [
-    "https://agent-market-frontend-three.vercel.app"
+    "https://agent-market-frontend-three.vercel.app",
+    "http://localhost:3000"
 ]
 app.add_middleware(
     CORSMiddleware,
