@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import StepIndicator from "../../../components/StepIndicator/StepIndicator";
 import { useResume } from "../../../context/ResumeContext";
 import { useAuth } from "../../../context/AuthContext";
+import { useAPI } from "../../../context/APIContext";
 import "../../../components/shared.css";
 import "./preview.css";
 
@@ -30,6 +31,7 @@ const PreviewPage: React.FC = () => {
   const [isDownloading, setIsDownloading] = useState(false);
 
   const {user, token} = useAuth()
+  const {url} = useAPI()
 
   // Fetch the AI-generated resume HTML from the backend on mount
   useEffect(() => {
@@ -38,7 +40,7 @@ const PreviewPage: React.FC = () => {
     const generate = async () => {
       setIsGenerating(true);
       try {
-        const res = await fetch(`${process.env.REACT_APP_DEV_API_URL}api/resume-builder-agent/generate`, {
+        const res = await fetch(`${url}api/resume-builder-agent/generate`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -71,7 +73,7 @@ const PreviewPage: React.FC = () => {
     if (!generatedHtml) return;
     setIsDownloading(true);
     try {
-      const res = await fetch(`${process.env.REACT_APP_DEV_API_URL}api/resume-builder-agent/download`, {
+      const res = await fetch(`${url}api/resume-builder-agent/download`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -84,12 +86,12 @@ const PreviewPage: React.FC = () => {
       const contentType = res.headers.get("Content-Type") ?? "";
       const isPdf = contentType.includes("pdf");
       const filename = isPdf ? "resume.pdf" : "resume.html";
-      const url = URL.createObjectURL(blob);
+      const urls = URL.createObjectURL(blob);
       const a = document.createElement("a");
-      a.href = url;
+      a.href = urls;
       a.download = filename;
       a.click();
-      URL.revokeObjectURL(url);
+      URL.revokeObjectURL(urls);
     } catch (err: unknown) {
       alert(`Download failed: ${err instanceof Error ? err.message : String(err)}`);
     } finally {
