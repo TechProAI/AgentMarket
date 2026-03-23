@@ -10,7 +10,7 @@ const APIContext = React.createContext<APIContextType | null>(null)
 
 export const APIProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
-    const url = process.env.REACT_APP_API_URL
+    const url = process.env.REACT_APP_DEV_API_URL
 
     return (
         <APIContext.Provider value={{ url }}>
